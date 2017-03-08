@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
-import { Card } from './common';
 import { View, Text } from 'react-native';
+import { Card, CardSection, Input, Button } from './common';
+// import { Card } from './common';
 // import { connect } from 'react-redux';
 // import * as actions from '../../actions';
 
 class LoginForm extends Component {
 
+  onEmailChange(text) {
+    
+  }
+
   render() {
     return (
       <Card>
-        {/* <Text>This is a feature</Text> */}
+        <CardSection>
+          <Input
+            label="Email"
+            placeholder="email@e.com"
+            onChangeText={this.onEmailChange.bind(this)}
+          />
+        </CardSection>
+        <CardSection>
+          <Input
+            secureTextEntry
+            label="password"
+            placeholder="email@e.com"
+          />
+        </CardSection>
+        <CardSection>
+          <Button>
+            Login
+          </Button>
+        </CardSection>
       </Card>
     );
   }
