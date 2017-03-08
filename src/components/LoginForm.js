@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { emailChanged } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
 // import { Card } from './common';
-// import { connect } from 'react-redux';
 // import * as actions from '../../actions';
 
 class LoginForm extends Component {
 
   onEmailChange(text) {
-    
+    this.props.emailChanged(text);
   }
 
   render() {
@@ -40,5 +41,5 @@ class LoginForm extends Component {
 // function mapStateToProps(state) {
 //  return { authenticated: state.auth.authenticated };
 // }
-// export default connect(mapStateToProps, actions)(App)
-export default LoginForm;
+export default connect(null, emailChanged)(LoginForm);
+// export default LoginForm;
