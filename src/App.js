@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk'
+import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import config from '../config/default.json';
 import LoginForm from './components/LoginForm';
