@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import reducers from './reducers';
+import reducers from './reducers/index';
 import config from '../config/default.json';
 import Router from './Router';
 // import { connect } from 'react-redux';
@@ -11,20 +11,16 @@ import Router from './Router';
 
 class App extends Component {
 
+  state = { loggedIn: null };
+
   componentWillMount() {
     // const fbConfig = config.get('private.firebase');
     firebase.initializeApp(config.private.firebase);
-    // firebase.auth().onAuthStateChanged((user) => {
-    //   if (user) {
-    //     this.setState({ loggedIn: true });
-    //   } else {
-    //     this.setState({ loggedIn: false });
-    //   }
-    // });
   }
 
   render() {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
     return (
       <Provider store={store}>
         <Router />
