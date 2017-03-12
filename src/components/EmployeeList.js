@@ -20,13 +20,11 @@ class EmployeeList extends Component {
   }
 
   createDataSource({ employees }) {
-    console.log(employees, 'employees');
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
     this.dataSource = ds.cloneWithRows(employees);
-    console.log(this.datasource, 'dsing');
   }
 
   renderRow(employee) {
@@ -34,7 +32,6 @@ class EmployeeList extends Component {
   }
 
   render() {
-    console.log(this.dataSource);
     console.log(this.props);
     return (
       <ListView

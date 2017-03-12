@@ -20,6 +20,7 @@ export const employeeCreate = ({ name, phone, shift }) => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
     .push({ name, phone, shift })
     .then(() => {
+      console.log(EMPLOYEE_CREATE);
       dispatch({ type: EMPLOYEE_CREATE });
       Actions.employeeList({ type: 'reset' });
     });
