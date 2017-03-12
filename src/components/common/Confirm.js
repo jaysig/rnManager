@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, Modal } from 'react-native';
+import { Text, View, Modal } from 'react-native';
 import { CardSection } from './CardSection';
 import { Button } from './Button';
-// import { connect } from 'react-redux';
-// import * as actions from '../../actions';
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
   const { containerStyle, textStyle, cardSectionStyle } = styles;
@@ -17,7 +15,9 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
     >
       <View style={containerStyle}>
         <CardSection style={cardSectionStyle}>
-          <Text style={textStyle}>{children}</Text>
+          <Text style={textStyle}>
+            {children}
+          </Text>
         </CardSection>
 
         <CardSection>
